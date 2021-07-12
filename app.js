@@ -6,11 +6,11 @@ function random(max,min) {
     
 }
 
-function Cookies(houres) {
-this.houres=houres;
-Cookies.push(this)
+// function Cookies(houres) {
+// this.houres=houres;
+// Cookies.push(this)
     
-}
+// }
 let allStores=[]
 function Stores(name,min,max,avg) {
     this.min=min;
