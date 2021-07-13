@@ -9,7 +9,7 @@ let Seattle={
     costmersNumber:[],
     avgCookiesPerHour:[],
     houres:['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'],
-    
+    total:0,
     randomNumber:function(){
         let h1= document.createElement('h1')
         h1.textContent=`seattle`
@@ -29,7 +29,8 @@ let Seattle={
     number:function(){
     for (let j = 0; j < 14; j++) {
         
-        this.avgCookiesPerHour.push(cookeis(this.avg,this.costmersNumber[j]))
+        this.avgCookiesPerHour.push(cookeis(this.avg,this.costmersNumber[j]));
+        this.total+=this.avgCookiesPerHour[j    ];
     }
     console.log(this.avgCookiesPerHour);
 },
@@ -219,5 +220,8 @@ function cookeis(x,y) {
   Dubai.number();
   Paris.number();
   Lima.number();
+  let totalElement=document.createElement('li');
+  ulelemetns.appendChild(totalElement);
+  totalElement.textContent=`total ${this.total} cookies`
 
 //  lest=document.getElementById('Seattle');
