@@ -123,6 +123,7 @@ tokyo.render();
 dubai.render();
 paris.render();
 lima.render();
+
 // let form=document.getElementById('form')
 // form.addEventListener('submit',formSubmitter)
 // function formSubmitter(event){
@@ -138,6 +139,22 @@ lima.render();
 //     console.log(newLocashon);
 
 // }
+let form=document.getElementById('form')
+form.addEventListener('submit',formSubmitter)
+function formSubmitter(event){
+    event.preventDefault();
+    let shopName=event.target.shopName.value;
+    let min= Number(event.target.min.value);
+    let max=Number (event.target.max.value);
+    let avg=Number (event.target.avg.value);
+    let newLocashon= new Stores(shopName, min,max,avg);
+    newLocashon.randomcastmores();
+    newLocashon.avgcookiesperhoure1();
+    newLocashon.render();
+    console.log(newLocashon);
+
+}
+
 
 
 
