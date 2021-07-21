@@ -12,6 +12,7 @@ function random(max, min) {
 
 // }
 let allStores = []
+
 function Stores(name, min, max, avg) {
     this.min = min;
     this.max = max;
@@ -20,8 +21,10 @@ function Stores(name, min, max, avg) {
     this.avgcookiesperhoure = [];
     this.name = name;
     this.total = 0;
+    // this.endElemant=endElemant;
     allStores.push(this);
 }
+
 Stores.prototype.randomcastmores = function () {
 
     for (let i = 0; i < houres.length; i++) {
@@ -56,6 +59,7 @@ let tokyo = new Stores('tokyo', 3, 24, 1.2)
 let dubai = new Stores('dubai', 3, 24, 3.7)
 let paris = new Stores('paris', 3, 24, 2.3)
 let lima = new Stores('lima', 3, 24, 4.6)
+// let endElemant= new Stores
 
 Seattle.randomcastmores();
 tokyo.randomcastmores();
@@ -146,22 +150,29 @@ lima.render();
 
 // }
 
+
+
+
+let endElemant = document.createElement('tr');
+let th3 = document.createElement('th');
+endElemant.appendChild(th3);
+th3.textContent = 'Total';
+tableElemantes.appendChild(endElemant);
+
 let table1 = document.getElementById('table');
-let rowsCount = table1.rows.length -1;
+let rowsCount = table1.rows.length - 2;
 
 let totalCols = 0;
-for(let u = 0; u < houres.length; u++) {
+for (let u = 0; u <= houres.length; u++) {
     for (let g = 0; g < rowsCount; g++) {
-        let firstCol = Number(table.rows[g+1].cells[u+1].innerHTML);
-        totalCols+=firstCol;
+        // i get this from online 
+        let firstCol = Number(table.rows[g + 1].cells[u + 1].innerHTML);
+        totalCols += firstCol;
     }
+    let th4 = document.createElement('th');
+    th4.textContent = totalCols;
+    endElemant.appendChild(th4);
     console.log(totalCols);
     totalCols = 0;
 }
 
-
-Stores.prototype.total1 = function () {
-    for (let g = 0; g < houres.length; g++) {
-        
-    }
-}
