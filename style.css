@@ -4,7 +4,11 @@ table,tr,th,td{
 /* img{
     height: 50px;
 } */
+
 /* body{
+
+body{
+
     background-color: rgba(217, 232, 235, 0.383);
 }
 form{
@@ -33,4 +37,8 @@ fieldset img{
 section img {
     height: 200px;
     width: 250px;
-} */
+
+
+
+}
+
