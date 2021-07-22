@@ -71,9 +71,13 @@ lima.avgcookiesperhoure1();
 
 let parent=document.getElementById('parent');
 let tableElemantes=document.createElement('table');
+tableElemantes.setAttribute("id", "table");
 parent.appendChild(tableElemantes);
-let hidingElemant=document.createElement('tr');
-parent.appendChild(hidingElemant);
+// parent.appendChild(tableElemantes);
+// let hidingElemant=document.createElement('tr');
+// parent.appendChild(hidingElemant);
+let hidingElemant = document.createElement('tr');
+tableElemantes.appendChild(hidingElemant);
 let th1=document.createElement('th');
     hidingElemant.appendChild(th1);
     th1.textContent='houres'
@@ -83,6 +87,9 @@ for (let k = 0; k < houres.length; k++) {
     hidingElemant.appendChild(th1);
     th1.textContent=houres[k]
 }
+let totalHh = document.createElement('th');
+hidingElemant.appendChild(totalHh);
+totalHh.textContent = 'Total';
 // let rowData=document.createElement('td');
 // parent.appendChild(rowData);
 // for (let index = 0; index < 5; index++) {
@@ -99,7 +106,7 @@ for (let k = 0; k < houres.length; k++) {
 Stores.prototype.render=function(){
     let hidingElemant=document.createElement('tr');
     let th2=document.createElement('th');
-parent.appendChild(hidingElemant);
+tableElemantes.appendChild(hidingElemant);
 hidingElemant.appendChild(th2);
 th2.textContent=this.name
 // let restorants=['Seattle','tokyo','dubai','paris','lima']
@@ -112,6 +119,7 @@ for (let l = 0; l < houres.length; l++) {
     let td=document.createElement('td');
     hidingElemant.appendChild(td);
     td.textContent=this.avgcookiesperhoure[l]
+    
 }
 let td2=document.createElement('td');
     hidingElemant.appendChild(td2);
@@ -141,12 +149,38 @@ function formSubmitter(event){
 
 
 
-Stores.prototype.total1=function(){
-    for (let g = 0; g < houres.length; g++) {
-      let totelStores=sum(this.avgcookiesperhoure[g])
-    //     for (let index = 0; index < this.name.length; index++) {
-            
-    //         this.name
-    //     }
+
+
+let endElemant = document.createElement('tr');
+let th3 = document.createElement('th');
+endElemant.appendChild(th3);
+th3.textContent = 'Total';
+tableElemantes.appendChild(endElemant);
+
+let table1 = document.getElementById('table');
+let rowsCount = table1.rows.length - 2;
+
+let totalCols = 0;
+for (let u = 0; u <= houres.length; u++) {
+    for (let g = 0; g < rowsCount; g++) {
+        // i get this from online 
+        let firstCol = Number(table.rows[g + 1].cells[u + 1].innerHTML);
+        totalCols += firstCol;
     }
+    let th4 = document.createElement('th');
+    th4.textContent = totalCols;
+    endElemant.appendChild(th4);
+    console.log(totalCols);
+    totalCols = 0;
 }
+
+
+// Stores.prototype.total1=function(){
+//     for (let g = 0; g < houres.length; g++) {
+//       let totelStores=sum(this.avgcookiesperhoure[g])
+//     //     for (let index = 0; index < this.name.length; index++) {
+            
+//     //         this.name
+//     //     }
+//     }
+// }
