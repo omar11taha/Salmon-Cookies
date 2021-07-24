@@ -130,13 +130,7 @@ let th3 = document.createElement('th');
 endElemant.appendChild(th3);
 th3.textContent = 'Total';
 tableElemantes.appendChild(endElemant);
-// table.textContent='';
-// Seattle.render();
-// tokyo.render();
-// dubai.render();
-// paris.render();
-// lima.render();
-// newLocashon.render();
+
 
 
 
