@@ -1,6 +1,6 @@
 'use strict'
 
-let houres = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm']
+let houres = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 function random(max, min) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 
@@ -15,7 +15,7 @@ function Stores(name, min, max, avg) {
     this.avgcookiesperhoure = [];
     this.name = name;
     this.total = 0;
-    allStores.push(this);
+    allStores.push(this);  
 }
 Stores.prototype.randomcastmores = function () {
 
