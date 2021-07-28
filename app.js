@@ -104,8 +104,12 @@ dubai.render();
 paris.render();
 lima.render();
 
+caculateTotal();
+
 let form = document.getElementById('form');
 form.addEventListener('submit', formSubmitter);
+
+
 
 function formSubmitter(event) {
     event.preventDefault();
@@ -114,27 +118,30 @@ function formSubmitter(event) {
     let max = Number(event.target.max.value);
     let avg = Number(event.target.avg.value);
     let newLocashon = new Stores(shopName, min, max, avg);
+    deletTotal();
     
     newLocashon.randomcastmores();
     newLocashon.avgcookiesperhoure1();
     newLocashon.render();
     console.log(newLocashon);
-    
+    caculateTotal();
 }
 
 
 
 
-let endElemant = document.createElement('tr');
-let th3 = document.createElement('th');
-endElemant.appendChild(th3);
-th3.textContent = 'Total';
-tableElemantes.appendChild(endElemant);
 
 
 
 
-
+function caculateTotal() {
+    
+    let endElemant = document.createElement('tr');
+    let th3 = document.createElement('th');
+    endElemant.appendChild(th3);
+    th3.textContent = 'Total';
+    tableElemantes.appendChild(endElemant);
+    
 
 let table1 = document.getElementById('table');
 let rowsCount = table1.rows.length - 2;
@@ -152,4 +159,11 @@ for (let u = 0; u <= houres.length; u++) {
     endElemant.appendChild(th4);
     console.log(totalCols);
     totalCols = 0;
+}
+}
+
+
+function deletTotal() {
+    document.getElementById('table').deleteRow(-1);
+    
 }
